@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    app:
+        build:
+            context: docker/nginx
+        volumes:
+            - ./app:/app
+        ports:
+            - "90:80"
+        depends_on:
+            - php-fpm
+        tty: true
+        restart: unless-stopped
+
+    php-fpm:
+        build:
+            context: docker/php-fpm
+        volumes:
+            - ./app:/app
+        restart: unless-stopped
+        tty: true
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+
+    php-cli:
+        build:
+            context: docker/php-cli
+        volumes:
+            - ./app:/app

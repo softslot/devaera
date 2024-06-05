@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Module\User\Infrastructure\Http;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;

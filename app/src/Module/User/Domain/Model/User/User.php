@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Entity;
+namespace App\Module\User\Domain\Model\User;
 
-use App\Repository\UserRepository;
+use App\Module\User\Infrastructure\Doctrine\User\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;

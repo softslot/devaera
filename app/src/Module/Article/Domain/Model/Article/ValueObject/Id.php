@@ -15,8 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
 final readonly class Id implements Stringable
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(name: 'id', type: Types::INTEGER, options: ['unsigned' => true])]
+    #[ORM\Column(name: 'id', type: Types::GUID)]
     private string $value;
 
     public function __construct(string $value)
